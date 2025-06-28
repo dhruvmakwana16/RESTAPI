@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/style.css" />
+  <title>All Posts</title>
+</head>
+<body>
+  <h1 class="header">CORA Posts</h1>
+
+  <% for(let post of posts) { %>
+    <div class="post-container">
+      <h3 class="post-username">@<%= post.username %></h3>
+      <p class="post-content"><%= post.content %></p>
+
+      <a href="/posts/<%= post.id %>">See in Detail</a> |
+      <a href="/posts/<%= post.id %>/edit">Edit</a>
+      <form action="/posts/<%= post.id %>/delete" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+    </div>
+  <% } %>
+
+  <br><br>
+  <a href="/posts/new">Create New Post</a>
+</body>
+</html>

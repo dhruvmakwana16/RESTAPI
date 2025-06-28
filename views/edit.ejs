@@ -1,0 +1,24 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style3.css">
+    <title>Edit Post</title>
+
+    </head>
+    <body>
+    <div class="post-form-container">
+        <h1 class="form-title">EDIT POST</h1>
+        <form method="POST" action="/posts/<%= post.id %>/update">
+        <div class="form-group">
+            <input type="text" class="form-input" name="username" value="<%= post.username %>" required />
+        </div>
+        <div class="form-group">
+            <textarea class="form-textarea" name="content" required><%= post.content %></textarea>
+        </div>
+        <button type="submit" class="submit-btn">UPDATE</button>
+        </form>
+    </div>
+    </body>
+    </html>
